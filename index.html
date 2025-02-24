@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamSphere - Prévia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #1a1a1a; color: #ffffff; font-family: Arial, sans-serif; }
+        .card { background-color: #2d2d2d; transition: transform 0.2s; }
+        .card:hover { transform: scale(1.05); }
+        .btn-social { border-radius: 20px; padding: 8px 16px; }
+        .dropdown-content { display: none; position: absolute; right: 0; background-color: #2d2d2d; min-width: 300px; z-index: 10; }
+        .dropdown:hover .dropdown-content { display: block; }
+    </style>
+</head>
+<body>
+    <nav class="bg-black p-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-3xl font-bold text-blue-400">StreamSphere</h1>
+        <div class="flex space-x-6 items-center">
+            <a href="#feed" class="text-gray-300 hover:text-blue-400"><i class="fas fa-rss mr-1"></i> Feed</a>
+            <a href="#profile" class="text-gray-300 hover:text-blue-400"><i class="fas fa-user mr-1"></i> Perfil</a>
+            <a href="#catalog" class="text-gray-300 hover:text-blue-400"><i class="fas fa-film mr-1"></i> Catálogo</a>
+            <div class="relative dropdown">
+                <button class="text-gray-300 hover:text-blue-400"><i class="fas fa-star mr-1 text-yellow-400"></i> Famosos</button>
+                <div id="celebrities" class="dropdown-content rounded-lg shadow-lg p-4">
+                    <div class="p-2 border-b border-gray-600">
+                        <p class="text-white"><i class="fas fa-check-circle text-blue-400 mr-1"></i> Elon Musk</p>
+                        <p class="text-gray-400 text-sm">Assistindo: <span class="text-blue-500">Stranger Things (Netflix)</span></p>
+                        <p class="text-gray-400 text-sm">Stranger Things: 9/10 - "Adoro o clima dos anos 80!"</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-white"><i class="fas fa-check-circle text-blue-400 mr-1"></i> Zendaya</p>
+                        <p class="text-gray-400 text-sm">Assistindo: <span class="text-blue-500">Euphoria (HBO Max)</span></p>
+                        <p class="text-gray-400 text-sm">Duna: 8.5/10 - "Visual incrível!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="feed" class="container mx-auto p-6">
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">Feed</h2>
+        <div class="card rounded-lg p-4 mb-6 shadow-lg">
+            <img src="https://via.placeholder.com/300x400?text=Duna" alt="Duna" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-xl font-semibold text-white">Duna (2021)</h3>
+                <p class="text-gray-400">Nota IMDb: <span class="text-yellow-400">8.0</span></p>
+                <p class="text-gray-300 text-sm">Sinopse: Um jovem herda um planeta desértico...</p>
+                <p class="text-gray-400">Streaming: <span class="text-blue-500">HBO Max</span></p>
+                <div class="mt-4 flex space-x-4">
+                    <button class="btn-social bg-black text-white" onclick="alert('Postando no X: Duna - 8/10: Ótimo filme!')">
+                        <i class="fab fa-x-twitter mr-1"></i> Postar no X
+                    </button>
+                    <button class="btn-social bg-blue-600 text-white" onclick="alert('Postando no TikTok: Duna')">
+                        <i class="fab fa-tiktok mr-1"></i> Postar no TikTok
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="container mx-auto p-6">
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">Perfil</h2>
+        <div class="card rounded-lg p-6 shadow-lg">
+            <h3 class="text-xl font-semibold text-white mb-2">Biblioteca</h3>
+            <p class="text-gray-300"><i class="fas fa-tv mr-2 text-blue-400"></i> Assistindo: <span class="text-blue-500">The Witcher (Netflix)</span></p>
+            <p class="text-gray-300"><i class="fas fa-star mr-2 text-yellow-400"></i> Favoritos: <span class="text-blue-500">Senhor dos Anéis (Amazon Prime)</span></p>
+            <div class="mt-4 flex space-x-4">
+                <button class="btn-social bg-black text-white" onclick="alert('Conectando ao X...')">
+                    <i class="fab fa-x-twitter mr-1"></i> Conectar X
+                </button>
+                <button class="btn-social bg-blue-600 text-white" onclick="alert('Conectando ao TikTok...')">
+                    <i class="fab fa-tiktok mr-1"></i> Conectar TikTok
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="container mx-auto p-6">
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">Catálogo desde 1950</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card rounded-lg p-4 shadow-lg">
+                <h3 class="text-lg font-semibold text-white">Cidadão Kane (1941)</h3>
+                <p class="text-gray-400">Nota IMDb: <span class="text-yellow-400">8.3</span></p>
+                <p class="text-gray-300 text-sm">Sinopse: A vida de um magnata da mídia...</p>
+                <p class="text-gray-400">Streaming: <span class="text-blue-500">Não disponível</span></p>
+            </div>
+            <div class="card rounded-lg p-4 shadow-lg">
+                <h3 class="text-lg font-semibold text-white">O Poderoso Chefão (1972)</h3>
+                <p class="text-gray-400">Nota IMDb: <span class="text-yellow-400">9.2</span></p>
+                <p class="text-gray-300 text-sm">Sinopse: A saga de uma família mafiosa...</p>
+                <p class="text-gray-400">Streaming: <span class="text-blue-500">Netflix</span></p>
+            </div>
+            <div class="card rounded-lg p-4 shadow-lg">
+                <h3 class="text-lg font-semibold text-white">Interestelar (2014)</h3>
+                <p class="text-gray-400">Nota IMDb: <span class="text-yellow-400">8.6</span></p>
+                <p class="text-gray-300 text-sm">Sinopse: Uma equipe explora o espaço...</p>
+                <p class="text-gray-400">Streaming: <span class="text-blue-500">Amazon Prime</span></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
